@@ -3,13 +3,10 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('dashboard');
 });
 
-Route::get('/test', function () {
-    return view('test');
+Route::get('/profile', function () {
+    return view('profile');
 });
 
-Route::get('/test', function () {
-    return view('test');
-});
