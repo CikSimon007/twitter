@@ -43,9 +43,10 @@
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         @endif
-        <h4> Share yours ideas </h4>
+        <h4> Update your post </h4>
         <div class="row">
-            <form action="{{ route('post.create') }}" method="post">
+            <form action="{{ route('post.update', $post->id) }}" method="post">
+                @method('put')
                 @csrf
                 <div class="mb-3">
                     <textarea class="form-control" id="idea" name="content" rows="3"></textarea>
@@ -54,15 +55,15 @@
                     @enderror
                 </div>
                 <div class="">
-                    <button class="btn btn-dark"> Share </button>
+                    <button class="btn btn-dark"> Update </button>
                 </div>
             </form>
         </div>
         <hr>
         <div class="mt-3">
-            @foreach ($posts as $post)
-                @include('inc.post-card')
-            @endforeach
+            
+            @include('inc.post-card')
+            
         </div>
     </div>
     <div class="col-3">
