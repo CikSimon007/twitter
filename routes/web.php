@@ -4,6 +4,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\CommentController;
 
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard.index');
 
@@ -17,4 +18,5 @@ Route::get('/post/{post}', [PostController::class, 'view'])->name('post.view'); 
 Route::get('/post/{post}/edit', [PostController::class, 'edit'])->name('post.edit'); // Editing post
 Route::put('/post/{post}', [PostController::class, 'update'])->name('post.update'); // Updating post
 
+Route::post('/post/{post}/comment', [CommentController::class, 'store'])->name('post.comments.store');
 
